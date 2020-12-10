@@ -13,7 +13,7 @@ public:
   virtual void Init();
 
   // returns a desired acceleration in global frame
-  V3F LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel, V3F accelCmd);
+  V3F LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel, V3F accelCmd, float dt);
 
   virtual VehicleCommand RunControl(float dt, float sim_time);
 
@@ -36,7 +36,9 @@ public:
   float kpPosXY, kpPosZ;
   float kpVelXY, kpVelZ;
   float kpBank, kpYaw;
+
   float KiPosZ;
+  
   V3F kpPQR;
   
   // limits & saturations
